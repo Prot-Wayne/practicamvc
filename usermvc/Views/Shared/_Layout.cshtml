@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">MVC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    @Html.ActionLink("Inicio", "Index", "Home", new { area=""}, new { @class = "nav-item nav-link" })
+                    @Html.ActionLink("Usuarios", "Index", "Users", new {area = "" }, new { @class = "nav-item nav-link" })
+                    @Html.ActionLink("Contacto", "Contacto", "Home", new { area = "" }, new { @class = "nav-item nav-link" })
+
+                </div>
+            </div>
+        </div>      
+        </nav>
+        <div class="container">
+            @RenderBody()
+        </div>
+        <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+
+</html>

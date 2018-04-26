@@ -1,0 +1,24 @@
+﻿@model  IEnumerable<usermvc.Models.usuario>
+
+@{
+    ViewBag.Title = "Listado de Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mt-5">Listado</h2>
+<table class="table table-hover table-responsive-lg">
+    <tr>
+        <td>@Html.DisplayNameFor(@model => model.nombre)</td>
+        <td>@Html.DisplayNameFor(@model => model.telefono)</td>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(itemModel => item.nombre)</td>
+            <td>@Html.DisplayFor(itemModel => item.telefono)</td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Nuevo", "Create", new {@class="btn btn-success"} )
+
+
